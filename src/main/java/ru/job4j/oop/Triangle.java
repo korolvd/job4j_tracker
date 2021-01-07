@@ -24,7 +24,7 @@ public class Triangle {
         double ab = this.first.distance(this.second);
         double ac = this.first.distance(this.third);
         double bc = this.second.distance(this.third);
-        return ab + ac > bc && ac + bc > ab && ab + bc > ac;
+        return (ab + ac) > bc && (ac + bc) > ab && (ab + bc) > ac;
     }
 
     public double area() {
