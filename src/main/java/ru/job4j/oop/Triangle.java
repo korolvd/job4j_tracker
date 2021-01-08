@@ -13,17 +13,11 @@ public class Triangle {
         this.third = cp;
     }
 
-    public double period() {
-        double ab = this.first.distance(this.second);
-        double ac = this.first.distance(this.third);
-        double bc = this.second.distance(this.third);
+    public double period(double ab, double ac, double bc) {
         return (ab + bc + ac) / 2;
     }
 
-    public boolean exist() {
-        double ab = this.first.distance(this.second);
-        double ac = this.first.distance(this.third);
-        double bc = this.second.distance(this.third);
+    public boolean exist(double ab, double ac, double bc) {
         return (ab + ac) > bc && (ac + bc) > ab && (ab + bc) > ac;
     }
 
@@ -32,8 +26,8 @@ public class Triangle {
         double ab = first.distance(second);
         double ac = first.distance(third);
         double bc = second.distance(third);
-        double p = this.period();
-        if (this.exist()) {
+        double p = this.period(ab, ac, bc);
+        if (this.exist(ab, ac, bc)) {
             rsl = sqrt(p * (p - ab) * (p - bc) * (p - ac));
         }
         return rsl;
