@@ -14,7 +14,8 @@ public class Matches {
     }
 
     public boolean take(int quant) {
-        boolean rsl = matches >= quant;
+        boolean rsl = matches >= quant
+                && quant > 0 && quant < 4;
         if (rsl) {
             matches = matches - quant;
         }
