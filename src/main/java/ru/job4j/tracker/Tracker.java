@@ -55,7 +55,7 @@ public class Tracker {
             item.setId(id);
             items.set(index, item);
         }
-        return rsl;
+        return false;
     }
 
     public boolean delete(int id) {
@@ -64,6 +64,6 @@ public class Tracker {
         if (rsl) {
             items.remove(index);
         }
-        return rsl;
+        return false;
     }
 }
