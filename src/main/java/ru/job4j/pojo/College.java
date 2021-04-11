@@ -6,7 +6,7 @@ public class College {
         student.setName("Владимир Владимирович Пушкин");
         student.setGroup(14453);
         student.setDate(2020, 12, 02);
-        System.out.println(student.getName() + " группа: " + student.getGroup() +
-                " дата поступления: " + student.getDate());
+        System.out.println(student.getName() + " группа: " + student.getGroup()
+                + " дата поступления: " + student.getDate());
     }
 }
