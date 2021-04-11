@@ -15,7 +15,7 @@ after_success:
 notifications:
   email:
     recipients:
-      -ffirin@mail.ru
+      - ffirin@mail.ru
     on_success: never # default: change
     on_failure: always # default: always
 
