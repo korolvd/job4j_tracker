@@ -29,4 +29,22 @@ public class UserTest {
                 );
         assertThat(rsl, greaterThan(0));
     }
+
+    @Test
+    public void whenCompareIvanVSIvan() {
+        int rsl = new User("Ivan", 32)
+                .compareTo(
+                        new User("Ivan", 31)
+                );
+        assertThat(rsl, greaterThan(0));
+    }
+
+    @Test
+    public void whenEqual() {
+        int rsl = new User("Ivan", 32)
+                .compareTo(
+                        new User("Ivan", 32)
+                );
+        assertThat(rsl, is(0));
+    }
 }
