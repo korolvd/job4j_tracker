@@ -2,10 +2,23 @@ package ru.job4j.bank;
 
 import java.util.Objects;
 
+/**
+ * Класс описывает базовую модель банковский счет
+ * @author job3j
+ * @version 1.0
+ */
 public class Account {
+    /**
+     * Объект Счет хранит собственные реквизиты для транзакций и балан
+     */
     private String requisite;
     private double balance;
 
+    /**
+     * При создании счета сразу задаются параметры
+     * @param requisite - уникальные реквизиты
+     * @param balance - баланс
+     */
     public Account(String requisite, double balance) {
         this.requisite = requisite;
         this.balance = balance;

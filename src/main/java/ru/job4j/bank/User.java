@@ -2,10 +2,23 @@ package ru.job4j.bank;
 
 import java.util.Objects;
 
+/**
+ * Класс описывает модель клиент
+ * @author job4j
+ * @version 1.0
+ */
 public class User {
+    /**
+     * Объект клинта хранит уникальный номер паспорта и имя
+     */
     private String passport;
     private String username;
 
+    /**
+     * При создании объекта клиент задаются:
+     * @param passport - уникальные паспортные данные
+     * @param username - имя клиента
+     */
     public User(String passport, String username) {
         this.passport = passport;
         this.username = username;
