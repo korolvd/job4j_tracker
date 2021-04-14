@@ -71,6 +71,17 @@ public class JobTest {
     }
 
     @Test
+    public void whenEqualNamesAndReverseSortByPriority() {
+        Comparator<Job> cmpNamePriority = new JobDescByPriority()
+                .thenComparing(new JobDescByName());
+        int rsl = cmpNamePriority.compare(
+                new Job("Fix bug", 0),
+                new Job("Fix bug", 1)
+        );
+        assertThat(rsl, greaterThan(0));
+    }
+
+    @Test
     public void whenComparatorByNameAndPrority() {
         Comparator<Job> cmpNamePriority = new JobSortByName()
                 .thenComparing(new JobSortByPriority());
@@ -79,6 +90,17 @@ public class JobTest {
                 new Job("Fix bug", 1)
         );
         assertThat(rsl, greaterThan(0));
+    }
+
+    @Test
+    public void whenEqualNamesAndSortByPriority() {
+        Comparator<Job> cmpNamePriority = new JobSortByName()
+                .thenComparing(new JobSortByPriority());
+        int rsl = cmpNamePriority.compare(
+                new Job("Fix bug", 0),
+                new Job("Fix bug", 1)
+        );
+        assertThat(rsl, lessThan(0));
     }
 
     @Test
