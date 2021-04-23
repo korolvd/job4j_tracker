@@ -6,10 +6,10 @@ import java.util.stream.Collectors;
 
 public class Profiles {
     public List<Address> collect(List<Profile> profiles) {
-        List<Address> addresses = profiles.stream()
+        return profiles.stream()
                 .map(profile -> profile.getAddress())
+                .sorted(Comparator.comparing(Address::getCity))
+                .distinct()
                 .collect(Collectors.toList());
-        Comparator<Address> comparator = Comparator.comparing(Address::getCity);
-        return addresses.stream().sorted(comparator).distinct().collect(Collectors.toList());
     }
 }
