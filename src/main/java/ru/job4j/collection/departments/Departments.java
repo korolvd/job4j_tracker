@@ -9,7 +9,7 @@ public class Departments {
             String start = "";
             for (String el : value.split("/")) {
                 tmp.add(start + el);
-                start = start + el + "/";
+                start += el + "/";
             }
         }
         return new ArrayList<>(tmp);
